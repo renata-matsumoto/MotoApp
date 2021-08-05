@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "mototaxi",
+    "slug": "mototaxi",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "mototaxi"
+}
