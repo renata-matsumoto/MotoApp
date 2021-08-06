@@ -1,11 +1,9 @@
 {
   "expo": {
-    "name": "mototaxi",
-    "slug": "mototaxi",
+    "name": "appMotoTaxi-Motorista",
+    "slug": "appMotoTaxi-Motorista",
     "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "assetBundlePatterns": ["**/*"]
   },
-  "name": "mototaxi"
+  "name": "appMotoTaxi-Motorista"
 }
