@@ -1,5 +1,6 @@
 import React from "react";
 import { StatusBar } from "react-native";
+import { StyleSheet, View, Text,  } from "react-native";
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
