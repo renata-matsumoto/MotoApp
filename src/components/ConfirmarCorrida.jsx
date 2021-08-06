@@ -3,7 +3,7 @@ import firebase from "../../firebase";
 import { StyleSheet, TextInput, Text, View, Button } from "react-native";
 import { styles } from "../../style/style";
 
-export default function AceitarCorrida({ navigation }) {
+export default function ConfirmarCorrida({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.container}> Solicitações de corridas</Text>
