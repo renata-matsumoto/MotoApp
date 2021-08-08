@@ -1,24 +1,24 @@
 import React from "react";
 import { Text, View, Image, TouchableOpacity } from "react-native";
 import { styles } from "../../style/style";
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from "react-native-vector-icons/FontAwesome";
 
 export default function Perfil() {
   return (
-  
     <View>
-
-      <Text style={styles.perfil1} > Meu Perfil </Text>
+      <Text style={styles.perfil1}> Meu Perfil </Text>
 
       <View>
-        <Image style={styles.perfilImg} source={require('../../images/user.jpg')}/>
+        <Image
+          style={styles.perfilImg}
+          source={require("../../images/perfil.jpg")}
+        />
       </View>
 
       <View>
         <Text style={styles.perfil2}>{`Nome \n Roberto José`}</Text>
       </View>
 
-      
       <View>
         <Text style={styles.perfil2}>{`Sobrenome \n Oliveira`}</Text>
       </View>
@@ -28,18 +28,15 @@ export default function Perfil() {
       </View>
 
       <View style={styles.perfil2}>
-      <Icon name="envelope" size={30}/>
-      <Text style={styles.perfil3}>{`    rjoseoliveira@gmail.com`}</Text>
+        <Icon name="envelope" size={30} />
+        <Text style={styles.perfil3}>{`    rjoseoliveira@gmail.com`}</Text>
       </View>
 
-      
       <View style={styles.perfilbtn}>
         <TouchableOpacity style={styles.perfilTouch}>
-        <Text style={styles.perfilText}>Editar dados</Text></TouchableOpacity>                 
+          <Text style={styles.perfilText}>Editar dados</Text>
+        </TouchableOpacity>
       </View>
-
     </View>
-
-
   );
 }

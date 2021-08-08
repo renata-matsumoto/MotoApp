@@ -1,31 +1,39 @@
-import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import React, { useState } from "react";
+import { StatusBar, StyleSheet, View, Text } from "react-native";
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import LoginInterno from "./src/components/LoginInterno";
 import Perfil from "./src/components/Perfil";
 import HistoricoGanhos from "./src/components/HistoricoGanhos";
 import ConfirmarCorrida from "./src/components/ConfirmarCorrida";
 import Capa from "./src/components/Capa";
 import Apresentacao from "./src/components/Apresentacao";
 import HistoricoHoje from "./src/components/HistoricoHoje";
-
-const Drawer = createDrawerNavigator();
+import { UserContext } from "./src/components/UserContext";
+import LoginInterno from "./src/components/LoginInterno";
+import Principal from "./src/components/Principal";
 
 export default function App() {
+  const [logado, setLogado] = useState(false);
+  const [usuario, setUsuario] = useState(null);
+
+  const logar = async (user) => {
+    setLogado(true);
+    setUsuario(user);
+  };
+
+  const deslogar = async () => {
+    setLogado(false);
+    setUsuario(null);
+  };
+
   return (
     <NavigationContainer>
       <StatusBar style="auto" />
-      <Drawer.Navigator initialRouteName="Apresentação">
-        <Drawer.Screen name="Apresentação" component={Apresentacao} />
-        <Drawer.Screen name="Capa" component={Capa} />
-        <Drawer.Screen name="Login" component={LoginInterno} />
-        <Drawer.Screen name="Confirmar" component={ConfirmarCorrida} />
-        <Drawer.Screen name="Perfil" component={Perfil} />
-        <Drawer.Screen name="Histórico Mensal" component={HistoricoGanhos} />
-        <Drawer.Screen name="Úlimas Corridas" component={HistoricoHoje} />
-      </Drawer.Navigator>
+
+      <UserContext.Provider value={{ usuario, logar, deslogar }}>
+        {logado && usuario ? <Principal /> : <LoginInterno />}
+      </UserContext.Provider>
     </NavigationContainer>
   );
 }
