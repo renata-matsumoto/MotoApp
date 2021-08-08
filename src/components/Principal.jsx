@@ -21,10 +21,13 @@ export default function Principal({ navigation }) {
     <Drawer.Navigator initialRouteName="Apresentação">
       <Drawer.Screen name="Apresentação" component={Apresentacao} />
       <Drawer.Screen name="Capa" component={Capa} />
-      <Drawer.Screen name="Confirmar" component={ConfirmarCorrida} />
+      <Drawer.Screen
+        name="Solicitações recebidas"
+        component={ConfirmarCorrida}
+      />
       <Drawer.Screen name="Perfil" component={Perfil} />
       <Drawer.Screen name="Histórico Mensal" component={HistoricoGanhos} />
-      <Drawer.Screen name="Úlimas Corridas" component={HistoricoHoje} />
+      <Drawer.Screen name="Últimas Corridas" component={HistoricoHoje} />
       <Drawer.Screen name="Logout" component={UserView} />
     </Drawer.Navigator>
   );

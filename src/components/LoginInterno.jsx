@@ -84,6 +84,7 @@ export default function LoginInterno() {
         <TextInput
           style={styles.loginInput}
           placeholder="Senha"
+          secureTextEntry={true}
           onChangeText={(value) => handleInputChange("senha", value)}
         />
       </View>
