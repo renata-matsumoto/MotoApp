@@ -11,7 +11,7 @@ export default function Perfil() {
       <Text style={styles.perfil1} > Meu Perfil </Text>
 
       <View>
-        <Image style={styles.perfilImg} source={require('../../images/perfil.jpg')}/>
+        <Image style={styles.perfilImg} source={require('../../images/user.jpg')}/>
       </View>
 
       <View>
@@ -33,8 +33,10 @@ export default function Perfil() {
       </View>
 
       
-      <TouchableOpacity style={styles.perfilTouch}>
-      <View><Text style={styles.perfilText}>Editar dados</Text></View></TouchableOpacity>                 
+      <View style={styles.perfilbtn}>
+        <TouchableOpacity style={styles.perfilTouch}>
+        <Text style={styles.perfilText}>Editar dados</Text></TouchableOpacity>                 
+      </View>
 
     </View>
 

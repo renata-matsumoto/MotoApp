@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View } from "react-native";
 import { Component } from "react";
-import {TouchableOpacity, StyleSheet } from "react-native";
+import {TouchableOpacity, StyleSheet, Image } from "react-native";
 import FlipCard from "react-native-flip-card-plus";
 import { styles } from "../../style/style";
 
@@ -19,26 +19,32 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.apresContainer}>
-        <View style={styles.baseSize}>
-          <FlipCard
-            style={styles.card}
-            flipHorizontal={false}
-            flipVertical
-            friction={10}
-            perspective={2000}
-            pressable={true}
-            pressableCustomFunc={true}
-            onPressed={() => alert("Pressed")}
-            longPressable={true}
-            onLongPressed={() => alert("Long Pressed")}
-            flip={this.state.flip}
+      <View style={styles.baseSize}>
+        <FlipCard
+          style={styles.card}
+          flipHorizontal={false}
+          flipVertical
+          friction={10}
+          perspective={2000}
+          pressable={true}
+          pressableCustomFunc={true}
+          onPress={() => {
+            this.setState({ flip: !this.state.flip });
+          }}
+          flip={this.state.flip}
           >
             <View style={styles.face}>
-              <Text>The Face</Text>
+          
+              <View>
+              <Image style={styles.flipImg} source={require('../../images/flip1.png')}/>
+              </View>
+              
             </View>
 
             <View style={styles.back}>
-              <Text>The Back</Text>
+            <View>
+              <Image style={styles.flipImg} source={require('../../images/flip2.png')}/>
+              </View>
             </View>
           </FlipCard>
         </View>
@@ -50,7 +56,7 @@ export default class App extends Component {
               this.setState({ flip: !this.state.flip });
             }}
           >
-            <Text style={styles.buttonText}>Venha</Text>
+            <Text style={styles.buttonText}>Parceiros</Text>
           </TouchableOpacity>
         </View>
       </View>

@@ -3,6 +3,12 @@
     "name": "appMotoTaxi-Motorista",
     "slug": "appMotoTaxi-Motorista",
     "version": "1.0.0",
+    "splash": {
+      "image":"./images/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#000"
+    },
+    "icon":"./images/icon.png",
     "assetBundlePatterns": ["**/*"]
   },
   "name": "appMotoTaxi-Motorista"
