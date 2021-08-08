@@ -23,11 +23,12 @@ export default function ConfirmarCorrida() {
       </View>
 
       <View style={styles.confirmaCorridaTouch}>
-        <TouchableOpacity ableOpacity style={styles.corridaTouch}>
+        <TouchableOpacity style={styles.corridaTouch}  onPress={() => navigation.navigate("ConfirmarCorrida")}>
           <View>
             <Text style={styles.corridaText1}>Aceitar</Text>
           </View>
         </TouchableOpacity>
+
 
         <TouchableOpacity style={styles.corridaTouch1}>
           <View>

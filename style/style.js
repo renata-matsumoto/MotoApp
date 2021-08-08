@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
   },
 
   baseSize: {
-    backgroundColor: "red",
+    backgroundColor: "black",
     height: 700,
     width: 400,
   },
@@ -27,10 +27,14 @@ export const styles = StyleSheet.create({
 
   face: {
     flex: 1,
-    backgroundColor: "red",
+    backgroundColor: "#FFC107",
     justifyContent: "center",
     alignItems: "center",
   },
+
+  // flipImg:{
+  //   height:,
+  // },
 
   back: {
     flex: 1,
@@ -81,10 +85,12 @@ export const styles = StyleSheet.create({
   },
 
   loginImg1: {
+    alignItems:'center',
     borderRadius: 120,
-    height: 200,
-    marginLeft: 100,
-    width: 205,
+    height: 250,
+    justifyContent:'center',
+    marginLeft:80,
+    width: 250,
   },
 
   loginBack: {
@@ -104,21 +110,22 @@ export const styles = StyleSheet.create({
     padding: 10,
   },
 
-  loginTouch: {
-    backgroundColor: "#FFC107",
-    borderRadius: 20,
-    color: "white",
-    height: 40,
-    marginTop: 50,
-    marginLeft: 55,
-    width: 300,
-  },
-
-  loginText1: {
-    fontSize: 35,
+  divbtn:{
+    alignItems:'center',
+},
+loginTouch:{
+    backgroundColor:'#FFC107',
+    borderRadius:20,
+    color: 'white',
+    height:40,
+    alignItems:'center',
+    width:300,
+},
+loginText1:{
+    fontSize:30,
     marginBottom: 5,
-    textAlign: "center",
-  },
+    textAlign:'center',
+},
 
   perfil1: {
     borderBottomColor: "red",
@@ -173,19 +180,26 @@ export const styles = StyleSheet.create({
     padding: 4,
   },
 
-  perfilTouch: {
-    backgroundColor: "Yellow",
-    borderRadius: 20,
-    height: 250,
-    marginTop: 50,
-    marginLeft: 100,
-    width: 250,
-  },
+  perfilTouch:{
+    backgroundColor:'#FFC107',
+    borderRadius:20,
+    color: 'white',
+    height:30,
+    alignItems:'center',
+    justifyContent:'center',
+    width:200,
+},
 
   perfilText: {
     fontSize: 40,
     marginTop: 5,
     textAlign: "center",
+  },
+
+  perfilbtn:{
+    justifyContent:'center',
+    alignItems:'center',
+    width:'100%',
   },
 
   historicoGanhos1: {
@@ -369,4 +383,67 @@ export const styles = StyleSheet.create({
     padding: 20,
     margin: 10,
   },
+
+  // Aceitar Corrida1
+
+  text1: {
+    color: "white",
+    fontSize: 20,
+    textAlign: "center",
+    marginBottom:5,
+  },
+ 
+  container5: {
+    alignItems:'center',
+    backgroundColor: 'black',
+    borderRadius: 80,
+    height: 45,
+    justifyContent:'center',
+    marginLeft:100,
+    marginBottom:400,
+    width: 200,
+  },
+
+  container6:{
+    alignItems:'center',
+    backgroundColor:'blue',
+    borderColor:'black',
+    borderWidth:1,
+    borderRadius:50,
+    justifyContent:'center',
+    height:100,
+    width:100,
+  },
+
+  container7:{
+    alignItems:'center',
+    justifyContent:'center',
+    marginBottom:10,
+  },
+
+  
+  text3: {
+    color: "white",
+    fontSize: 20,
+    textAlign: "center",
+    marginBottom:5,
+  },
+
+  
+  text4: {
+    color: "black",
+    fontSize: 25,
+    textAlign: "center",
+    marginTop: 30,
+    marginLeft:50,
+    marginRight: 50,
+  },
+
+  
+  container8:{
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'center',
+  },
+
 });

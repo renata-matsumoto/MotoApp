@@ -30,7 +30,7 @@ export default function AceitarCorrida() {
           <View style={styles.ico}>
             <Icon name="angle-double-up"size={30}/>
           </View>
-          <Text style={styles.text2}>Você está offiline </Text>
+          <Text style={styles.text4}>Sair</Text>
           <View style={styles.ico}>
             <Icon name="bars" size={30}/>
           </View>
