@@ -1,20 +1,31 @@
-import React from "react";
-import { StatusBar } from "react-native";
+import React, { useContext } from "react";
 import "react-native-gesture-handler";
-import { createStackNavigator } from "@react-navigation/stack";
-import Login from "./Login";
-import ConfirmarCorrida from "./ConfirmarCorrida";
-import HistoricoCorrida from "./HistoricoCorrida";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 import { styles } from "../../style/style";
+import { UserContext } from "./UserContext";
 
-const Stack = createStackNavigator();
+import Capa from "./Capa";
+import Apresentacao from "./Apresentacao";
+import HistoricoHoje from "./HistoricoHoje";
+import Perfil from "./Perfil";
+import HistoricoGanhos from "./HistoricoGanhos";
+import ConfirmarCorrida from "./ConfirmarCorrida";
+import UserView from "./UserView";
 
-export default function Principal() {
+const Drawer = createDrawerNavigator();
+
+export default function Principal({ navigation }) {
+  const { deslogar } = useContext(UserContext);
+
   return (
-    <Stack.Navigator initialRouteName="Login">
-      <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="ConfirmarCorrida" component={ConfirmarCorrida} />
-      <Stack.Screen name="HistoricoCorrida" component={HistoricoCorrida} />
-    </Stack.Navigator>
+    <Drawer.Navigator initialRouteName="Apresentação">
+      <Drawer.Screen name="Apresentação" component={Apresentacao} />
+      <Drawer.Screen name="Capa" component={Capa} />
+      <Drawer.Screen name="Confirmar" component={ConfirmarCorrida} />
+      <Drawer.Screen name="Perfil" component={Perfil} />
+      <Drawer.Screen name="Histórico Mensal" component={HistoricoGanhos} />
+      <Drawer.Screen name="Úlimas Corridas" component={HistoricoHoje} />
+      <Drawer.Screen name="Logout" component={UserView} />
+    </Drawer.Navigator>
   );
 }

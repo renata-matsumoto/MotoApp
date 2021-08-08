@@ -74,6 +74,7 @@ export const styles = StyleSheet.create({
     marginTop: 50,
     marginLeft: 15,
     padding: 4,
+    textAlign: "center",
   },
 
   loginImg: {
@@ -85,11 +86,11 @@ export const styles = StyleSheet.create({
   },
 
   loginImg1: {
-    alignItems:'center',
+    alignItems: "center",
     borderRadius: 120,
     height: 250,
-    justifyContent:'center',
-    marginLeft:80,
+    justifyContent: "center",
+    marginLeft: 80,
     width: 250,
   },
 
@@ -110,22 +111,24 @@ export const styles = StyleSheet.create({
     padding: 10,
   },
 
-  divbtn:{
-    alignItems:'center',
-},
-loginTouch:{
-    backgroundColor:'#FFC107',
-    borderRadius:20,
-    color: 'white',
-    height:40,
-    alignItems:'center',
-    width:300,
-},
-loginText1:{
-    fontSize:30,
+  divbtn: {
+    alignItems: "center",
+  },
+  loginTouch: {
+    backgroundColor: "#FFC107",
+    borderRadius: 20,
+    color: "white",
+    height: 40,
+    alignItems: "center",
+    justifyContent: "center",
+    width: 300,
+    padding: 10,
+  },
+  loginText1: {
+    fontSize: 30,
     marginBottom: 5,
-    textAlign:'center',
-},
+    textAlign: "center",
+  },
 
   perfil1: {
     borderBottomColor: "red",
@@ -180,15 +183,15 @@ loginText1:{
     padding: 4,
   },
 
-  perfilTouch:{
-    backgroundColor:'#FFC107',
-    borderRadius:20,
-    color: 'white',
-    height:30,
-    alignItems:'center',
-    justifyContent:'center',
-    width:200,
-},
+  perfilTouch: {
+    backgroundColor: "#FFC107",
+    borderRadius: 20,
+    color: "white",
+    height: 30,
+    alignItems: "center",
+    justifyContent: "center",
+    width: 200,
+  },
 
   perfilText: {
     fontSize: 40,
@@ -196,10 +199,10 @@ loginText1:{
     textAlign: "center",
   },
 
-  perfilbtn:{
-    justifyContent:'center',
-    alignItems:'center',
-    width:'100%',
+  perfilbtn: {
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
   },
 
   historicoGanhos1: {
@@ -390,60 +393,56 @@ loginText1:{
     color: "white",
     fontSize: 20,
     textAlign: "center",
-    marginBottom:5,
+    marginBottom: 5,
   },
- 
+
   container5: {
-    alignItems:'center',
-    backgroundColor: 'black',
+    alignItems: "center",
+    backgroundColor: "black",
     borderRadius: 80,
     height: 45,
-    justifyContent:'center',
-    marginLeft:100,
-    marginBottom:400,
+    justifyContent: "center",
+    marginLeft: 100,
+    marginBottom: 400,
     width: 200,
   },
 
-  container6:{
-    alignItems:'center',
-    backgroundColor:'blue',
-    borderColor:'black',
-    borderWidth:1,
-    borderRadius:50,
-    justifyContent:'center',
-    height:100,
-    width:100,
+  container6: {
+    alignItems: "center",
+    backgroundColor: "blue",
+    borderColor: "black",
+    borderWidth: 1,
+    borderRadius: 50,
+    justifyContent: "center",
+    height: 100,
+    width: 100,
   },
 
-  container7:{
-    alignItems:'center',
-    justifyContent:'center',
-    marginBottom:10,
+  container7: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 10,
   },
 
-  
   text3: {
     color: "white",
     fontSize: 20,
     textAlign: "center",
-    marginBottom:5,
+    marginBottom: 5,
   },
 
-  
   text4: {
     color: "black",
     fontSize: 25,
     textAlign: "center",
     marginTop: 30,
-    marginLeft:50,
+    marginLeft: 50,
     marginRight: 50,
   },
 
-  
-  container8:{
-    flexDirection:'row',
-    alignItems:'center',
-    justifyContent:'center',
+  container8: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
   },
-
 });
