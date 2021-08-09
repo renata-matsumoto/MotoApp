@@ -47,15 +47,15 @@ export default function Perfil() {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.logo} source={require("../../images/perfil.jpg")} />
+      <Image style={styles.foto} source={require("../../images/perfil.jpg")} />
 
       <FlatList
         data={state}
         renderItem={({ item }) => (
           <View style={styles.container}>
-            <Text>Nome: {item.dados.nome} </Text>
-            <Text>Cor Moto: {item.dados.corMoto} </Text>
-            <Text>Placa: {item.dados.placaMoto} </Text>
+            <Text>Nome: {item..nome} </Text>
+            <Text>Cor Moto: {item..corMoto} </Text>
+            <Text>Placa: {item..placaMoto} </Text>
           </View>
         )}
       />
@@ -63,15 +63,16 @@ export default function Perfil() {
   );
 }
 const styles = StyleSheet.create({
-  container: {
+  foto: {
+    width: 200,
+    height: 200,
+    margin: "20%",
+  },
+   container: {
     flex: 1,
-    backgroundColor: "#FEA82F",
+
     alignItems: "center",
     justifyContent: "center",
   },
-  logo: {
-    width: 300,
-    height: 300,
-    marginTop: "15%",
-  },
+  
 });
