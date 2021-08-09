@@ -88,11 +88,11 @@ export default function LoginInterno() {
           onChangeText={(value) => handleInputChange("senha", value)}
         />
       </View>
-      <TouchableOpacity style={styles.loginTouch} onPress={LoginInterno}>
-        <View>
+      <View style={{ alignItems: "center" }}>
+        <TouchableOpacity style={styles.loginTouch} onPress={LoginInterno}>
           <Text style={styles.loginText1}>Login</Text>
-        </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }

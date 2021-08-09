@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import { Button, View } from "react-native";
+import { TouchableOpacity, View, Text } from "react-native";
 import firebase from "../../firebase";
 import { UserContext } from "./UserContext";
+import { styles } from "../../style/style";
 
 export default function UserView() {
   const { deslogar } = useContext(UserContext);
@@ -13,8 +14,12 @@ export default function UserView() {
   };
 
   return (
-    <View>
-      <Button color="#FFC107" title="Logout" onPress={logout} />
+    <View style={{ alignItems: "center" }}>
+      <TouchableOpacity style={styles.loginTouch} onPress={logout}>
+        <View>
+          <Text style={styles.loginText1}>Sair</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }
