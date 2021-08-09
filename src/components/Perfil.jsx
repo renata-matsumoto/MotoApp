@@ -1,42 +1,77 @@
-import React from "react";
-import { Text, View, Image, TouchableOpacity } from "react-native";
-import { styles } from "../../style/style";
-import Icon from "react-native-vector-icons/FontAwesome";
+import React, { useEffect, useState } from "react";
+import firebase from "../../firebase";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ActivityIndicator,
+  FlatList,
+  Button,
+  Image,
+} from "react-native";
 
 export default function Perfil() {
+  const [loading, setLoading] = useState(true);
+  const [state, setState] = useState([]);
+
+  useEffect(() => {
+    pegaDados();
+  }, []);
+
+  //busca o conteúdo da coleção:
+  const pegaDados = async () => {
+    //Referência do firebase firestore, acessando a coleção:
+    const motorista = firebase.db.collection("motorista");
+
+    //constante de armazenamento esperando o retorno da função:
+    const resposta = await motorista.get();
+
+    //constante que recebe os documentos alinhados no formato de array com as informações:
+    const dados = resposta.docs;
+
+    //Trazer um a um para receber e mostrar os dados organizados em objeto:
+    const listMotorista = [];
+    dados.forEach((doc) => {
+      listMotorista.push({
+        ...doc.data(),
+        key: doc.id,
+      });
+    });
+    setState(listMotorista);
+    setLoading(false);
+  };
+
+  if (loading) {
+    return <ActivityIndicator />;
+  }
+
   return (
-    <View>
-      <Text style={styles.perfil1}> Meu Perfil </Text>
+    <View style={styles.container}>
+      <Image style={styles.logo} source={require("../../images/perfil.jpg")} />
 
-      <View>
-        <Image
-          style={styles.perfilImg}
-          source={require("../../images/perfil.jpg")}
-        />
-      </View>
-
-      <View>
-        <Text style={styles.perfil2}>{`Nome \n Roberto José`}</Text>
-      </View>
-
-      <View>
-        <Text style={styles.perfil2}>{`Sobrenome \n Oliveira`}</Text>
-      </View>
-
-      <View>
-        <Text style={styles.perfil2}>{`Telefone \n 11-99558-5489`}</Text>
-      </View>
-
-      <View style={styles.perfil2}>
-        <Icon name="envelope" size={30} />
-        <Text style={styles.perfil3}>{`    rjoseoliveira@gmail.com`}</Text>
-      </View>
-
-      <View style={styles.perfilbtn}>
-        <TouchableOpacity style={styles.perfilTouch}>
-          <Text style={styles.perfilText}>Editar dados</Text>
-        </TouchableOpacity>
-      </View>
+      <FlatList
+        data={state}
+        renderItem={({ item }) => (
+          <View style={styles.container}>
+            <Text>Nome: {item.dados.nome} </Text>
+            <Text>Cor Moto: {item.dados.corMoto} </Text>
+            <Text>Placa: {item.dados.placaMoto} </Text>
+          </View>
+        )}
+      />
     </View>
   );
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#FEA82F",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  logo: {
+    width: 300,
+    height: 300,
+    marginTop: "15%",
+  },
+});
