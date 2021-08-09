@@ -14,7 +14,7 @@ export default function UserView() {
   };
 
   return (
-    <View style={{ alignItems: "center" }}>
+    <View style={{ alignItems: "center", margin: 50 }}>
       <TouchableOpacity style={styles.loginTouch} onPress={logout}>
         <View>
           <Text style={styles.loginText1}>Sair</Text>
