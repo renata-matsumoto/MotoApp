@@ -8,6 +8,7 @@ export default function Select(){
     const [corridaSolicitada,setCorridaSolicitada]=useState([]);
     const [corridaRetornada,setCorridaRetornada]=useState([]);
 
+    // Função para pegar dados de todas as corridas
     const pegaDadosCorrida = async () =>{
         const corrida=firebase.db.collection('corrida');
         const querySnapshot= await corrida.where('status','==','Solicitada').get();
@@ -22,6 +23,7 @@ export default function Select(){
             })
             setCorridaSolicitada(listRuns);
     }
+    // Função para pegar todas as corridas retornadas (negadas)
     const pegaDadosCorridaRetornada = async () =>{
         const corrida=firebase.db.collection('corrida');
         const querySnapshot= await corrida.where('status','==','Retornada').get();
@@ -36,6 +38,7 @@ export default function Select(){
             })
             setCorridaRetornada(listRuns);
     }
+    // Função para puxar os dados de todos os motoristas
     const pegaDadosMotorista = async () => {
         const motorista = firebase.db.collection('motorista');
         const querySnapshot = await motorista.get();
@@ -50,6 +53,7 @@ export default function Select(){
             })
         setMotorista(listDriver);
     }
+    // Função para especificar qual motorista vai receber a corrida
     const atribuirMotorista =async (key,valor) => {
         const users = firebase.db.collection('corrida');
         const doc = await users.doc(key).update({
@@ -60,6 +64,7 @@ export default function Select(){
             ()=>alert('Not saved')
         );
     }
+    // Função para enviar as corridas aos motoristas
     const encaminharCorrida = async (a) => {
         const users = firebase.db.collection('corrida');
         const doc = await users.doc(a).update({
