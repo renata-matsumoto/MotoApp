@@ -9,6 +9,7 @@ export default function Status(){
     const [corridaEncaminhada,setCorridaEncaminhada]=useState();
     const [corridaSolicitada,setCorridaSolicitada]=useState([]);
 
+    // Função para o motorista aceitar a corrida
     const aceitarCorrida = async (a) => {
           const users=firebase.db.collection('corrida');
           const doc = await users.doc(a).update({
@@ -19,6 +20,7 @@ export default function Status(){
             ()=>alert('Not saved')
           );
     }
+    // Função para o motorista negar a corrida
     const recusarCorrida = async (a) => {
         const users=firebase.db.collection('corrida');
         const doc = await users.doc(a).update({
