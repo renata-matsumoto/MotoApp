@@ -49,10 +49,10 @@ export default function Perfil() {
         data={state}
         renderItem={({ item }) => (
           <View style={styles.container}>
-            <Text>Nome: {item.nome} </Text>
-            <Text>Documento da moto: {item.documentoMoto} </Text>
-            <Text>Placa: {item.placaMoto} </Text>
-            <Text>Cor Moto: {item.corMoto} </Text>
+            <Text>Nome: {item.dados.nome} </Text>
+            <Text>Documento da moto: {item.dados.documentoMoto} </Text>
+            <Text>Placa: {item.dados.placaMoto} </Text>
+            <Text>Cor Moto: {item.dados.corMoto} </Text>
           </View>
         )}
       />
