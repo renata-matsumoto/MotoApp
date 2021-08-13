@@ -6,7 +6,6 @@ import firebase from '../../firebase';
 
 export default function Status(){
     const [listUsers,setListUsers]=useState();
-    const [corridaEncaminhada,setCorridaEncaminhada]=useState();
     const [corridaSolicitada,setCorridaSolicitada]=useState([]);
 
     // Função para o motorista aceitar a corrida
@@ -50,10 +49,6 @@ export default function Status(){
   ,[]);
     return(
         <View style={styles.container}>
-            <Button
-              title='Atualizar'
-              onPress={()=>{pegaDados()}}
-            />
             <FlatList
                 data={corridaSolicitada}
                 renderItem={({item}) => (

@@ -20,6 +20,7 @@
     "expo-updates": "~0.8.1",
     "firebase": "8.2.3",
     "fix": "0.0.6",
+    "moment": "^2.29.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-icons": "^4.2.0",

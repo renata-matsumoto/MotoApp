@@ -4,11 +4,8 @@ import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import Perfil from "./src/components/Perfil";
-import HistoricoGanhos from "./src/components/HistoricoGanhos";
 import ConfirmarCorrida from "./src/components/ConfirmarCorrida";
-import Capa from "./src/components/Capa";
 import Apresentacao from "./src/components/Apresentacao";
-import HistoricoHoje from "./src/components/HistoricoHoje";
 import { UserContext } from "./src/components/UserContext";
 import LoginInterno from "./src/components/LoginInterno";
 import Principal from "./src/components/Principal";
@@ -30,7 +27,6 @@ export default function App() {
   return (
     <NavigationContainer>
       <StatusBar style="auto" />
-
       <UserContext.Provider value={{ usuario, logar, deslogar }}>
         {logado && usuario ? <Principal /> : <LoginInterno />}
       </UserContext.Provider>

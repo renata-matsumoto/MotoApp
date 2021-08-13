@@ -86,11 +86,11 @@ export const styles = StyleSheet.create({
   },
 
   loginImg1: {
-    alignItems: "center",
+    alignSelf: "center",
     borderRadius: 120,
     height: 250,
+    marginTop:10,
     justifyContent: "center",
-    marginLeft: 80,
     width: 250,
   },
 

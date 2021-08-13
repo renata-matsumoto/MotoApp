@@ -22,7 +22,7 @@ export default function Perfil() {
   const pegaDados = async () => {
     const motorista = firebase.db.collection("motorista");
 
-    const resposta = await motorista.get();
+    const resposta = await motorista.where('key','==','Sii9i6N6xBg8IchabK1RG2yIjIB3').get();
 
     const dados = resposta.docs;
 
