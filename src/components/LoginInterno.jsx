@@ -66,11 +66,11 @@ export default function LoginInterno() {
 
   return (
     <View style={styles.container}>
-      {" "}
+      {/* {" "} */}
       <View>
         <Image
           style={styles.loginImg1}
-          source={require("../../images/logoMoto2.jpeg")}
+          source={require("../../images/LogoMot.jpeg")}
         />
       </View>
       <Text style={styles.loginText}>Login</Text>
