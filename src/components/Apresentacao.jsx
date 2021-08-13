@@ -35,7 +35,7 @@ export default class App extends Component {
               <View>
                 <Image
                   style={styles.flipImg}
-                  source={require("../../images/logo.png")}
+                  source={require("../../images/flip1.png")}
                 />
               </View>
             </View>
@@ -44,7 +44,7 @@ export default class App extends Component {
               <View>
                 <Image
                   style={styles.flipImg}
-                  source={require("../../images/logo1.png")}
+                  source={require("../../images/flip2.png")}
                 />
               </View>
             </View>
