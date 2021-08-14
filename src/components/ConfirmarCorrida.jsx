@@ -132,7 +132,7 @@ export default function Status(){
   return(
         <ScrollView>
             <Text style={styles.tituloCorridas}>
-                Corridas disponíveis
+                Corridas disponíveis 
             </Text>
             <View>
               <FlatList

@@ -6,13 +6,25 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { UserContext } from '../components/UserContext';
 import { styles } from '../../style/style';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import firebase from '../../firebase';
 
 
 
 
 export function DrawerContent(props) {
-    
-	const { logout } = useContext(UserContext);
+	const { deslogar } = useContext(UserContext);
+	const {logado, setLogado} = useContext(UserContext);
+	const {usuario, setUsuario} = useContext(UserContext);
+
+	// const deslogar = async () => {
+	// 	setLogado(false);
+	// 	setUsuario(null);
+	// };
+	const logout = async () => {
+		const auth = firebase.auth;
+		await auth.signOut();
+		deslogar();
+	  };
 
 	return (
 		<View style={{ flex: 1 }}>
@@ -60,7 +72,6 @@ export function DrawerContent(props) {
 								props.navigation.navigate('Histórico');
 							}}
 						/>
-                        
 					</Drawer.Section>
 				</View>
 			</DrawerContentScrollView>

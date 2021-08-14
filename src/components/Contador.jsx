@@ -31,7 +31,7 @@ export default function Contador(){
     }).then(
       ()=>alert('Recusada')
     ).catch(
-      ()=>alert('Houve um erro')
+      ()=>alert('Corrida recusada')
     );
 }
 

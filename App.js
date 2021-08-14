@@ -23,11 +23,13 @@ export default function App() {
     setLogado(false);
     setUsuario(null);
   };
+  
+  
 
   return (
     <NavigationContainer>
       <StatusBar style="auto" />
-      <UserContext.Provider value={{ usuario, logar, deslogar }}>
+      <UserContext.Provider value={{ usuario, setUsuario, logar, deslogar, logado, setLogado }}>
         {logado && usuario ? <Principal /> : <LoginInterno />}
       </UserContext.Provider>
     </NavigationContainer>
