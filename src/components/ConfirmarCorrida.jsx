@@ -148,6 +148,9 @@ export default function Status(){
                                 title='Aceitar'
                                 onPress={()=>{aceitarCorrida(item.key),indisp(item.keyMotorista),pegaDadosAndamento(),pegaDados()}}
                             />
+                          </View> 
+                          <View>
+                            <Contador/>
                           </View>
                           <View style={styles.viewButton}>
                             <Button
@@ -156,9 +159,7 @@ export default function Status(){
                                 onPress={()=>{recusarCorrida(item.key),pegaDadosAndamento(),pegaDados()}}
                             />
                           </View>
-                          <View>
-                            {/* <Contador/> */}
-                          </View>
+                         
                       </View>
                   )}
               /> 
