@@ -70,7 +70,7 @@ export default function LoginInterno() {
       <View>
         <Image
           style={styles.loginImg1}
-          source={require("../../images/LogoMot.jpeg")}
+          source={require("../../images/Login.png")}
         />
       </View>
       <Text style={styles.loginText}>Login</Text>
