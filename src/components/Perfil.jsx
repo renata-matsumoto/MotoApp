@@ -43,7 +43,7 @@ export default function Perfil() {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.foto} source={require("../../images/perfil.jpg")} />
+      <Image style={styles.foto} source={require("../../images/user.jpg")} />
 
       <FlatList
         data={state}

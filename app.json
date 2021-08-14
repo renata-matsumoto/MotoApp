@@ -8,7 +8,7 @@
       "resizeMode": "cover",
       "backgroundColor": "#000"
     },
-    "icon":"./images/icon.png",
+    "icon":"./images/ico.png",
     "assetBundlePatterns": ["**/*"]
   },
   "name": "appMotoTaxi-Motorista"
