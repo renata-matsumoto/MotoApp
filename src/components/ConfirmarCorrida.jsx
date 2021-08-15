@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import { Button, Text, TextInput, View, FlatList, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import firebase from '../../firebase';
 import moment from 'moment';
 import Contador from './Contador';
+import { UserContext } from './UserContext';
 
 export default function Status(){
-    const [listUsers,setListUsers]=useState();
     const [corridaSolicitada,setCorridaSolicitada]=useState([]);
     const [corridaAndamento, setCorridaAndamento]=useState([]);
     const [ocupado, setOcupado]=useState(false);
@@ -21,7 +21,7 @@ export default function Status(){
           ).catch(
             ()=>alert('Houve um erro')
           );
-          setOcupado(true)
+          setTimeout(() => setOcupado(true),2000);
     }
     // Função para o motorista negar a corrida
     const recusarCorrida = async (a) => {
@@ -102,9 +102,9 @@ export default function Status(){
         })
         setMotoca(listDriver);
   }
-  useEffect(
+  useEffect( 
       () => {pegaDadosAndamento(),pegaDados(),pegaDadosMotoca()}
-  ,[]);
+  ,[])
   if(ocupado){
     return <View>
               <Text style={styles.tituloCorridas}>
@@ -119,7 +119,6 @@ export default function Status(){
                           <Text style={styles.textFlatlist}>Passageiro: {item.passageiro}</Text>
                           <Text style={styles.textFlatlist}>Status: {item.status} {`\n \n`}</Text>
                           <Button
-                              
                               title='Finalizar'
                               color='orange'
                               onPress={()=>{finalizarCorrida(item.key),parado(item.keyMotorista),pegaDadosAndamento(),pegaDados()}}
@@ -150,7 +149,7 @@ export default function Status(){
                             />
                           </View> 
                           <View>
-                            <Contador/>
+                            <Contador KeyCorrida = {item.key}/>
                           </View>
                           <View style={styles.viewButton}>
                             <Button
@@ -159,7 +158,6 @@ export default function Status(){
                                 onPress={()=>{recusarCorrida(item.key),pegaDadosAndamento(),pegaDados()}}
                             />
                           </View>
-                         
                       </View>
                   )}
               /> 

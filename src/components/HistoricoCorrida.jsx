@@ -20,11 +20,9 @@ export default function HistoricoCorrida({ navigation }) {
         })
         setCorridaFinalizada(listRuns);
 }
-  useEffect(
-    () => {setTimeout(() => {
-      pegaDadosCorrida();
-    }, 2000)
-  ,[]});
+  useEffect( 
+    () => {pegaDadosCorrida();}
+  ,[]);
 
   return (
     <View>

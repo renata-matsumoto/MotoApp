@@ -13,6 +13,8 @@ import Principal from "./src/components/Principal";
 export default function App() {
   const [logado, setLogado] = useState(false);
   const [usuario, setUsuario] = useState(null);
+  const [zerado, setZerado] = useState(false);
+  
 
   const logar = async (user) => {
     setLogado(true);
@@ -29,7 +31,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <StatusBar style="auto" />
-      <UserContext.Provider value={{ usuario, setUsuario, logar, deslogar, logado, setLogado }}>
+      <UserContext.Provider value={{ usuario, setUsuario, logar, deslogar, logado, setLogado, zerado, setZerado}}>
         {logado && usuario ? <Principal /> : <LoginInterno />}
       </UserContext.Provider>
     </NavigationContainer>
