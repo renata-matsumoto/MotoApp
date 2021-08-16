@@ -31,7 +31,7 @@ export default function Status({navigation}) {
       })
       .then(() => alert("Corrida aceita!"))
       .catch(() => alert("Houve um erro"));
-    setTimeout(() => setOcupado(true), 2000);
+    setTimeout(() => setOcupado(true), 3000);
   };
   // Função para o motorista negar a corrida
   const recusarCorrida = async (a) => {
