@@ -7,11 +7,12 @@ import {
   ActivityIndicator,
   FlatList,
   Image,
+  TouchableOpacity
 } from "react-native";
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 import firebase from "../../firebase";
 
-export default function Perfil() {
+export default function Perfil({navigation}) {
   const [loading, setLoading] = useState(true);
   const [state, setState] = useState([]);
 
@@ -43,16 +44,26 @@ export default function Perfil() {
 
   return (
     <View style={styles.container}>
+
+      
+    <View style={styles.hojebtn1}>
+        <TouchableOpacity style={styles.hojeTouch1} onPress={() => navigation.navigate("Apresentação")}>
+            <Icon name="angle-left" style={styles.ico1} size={20}/>
+        </TouchableOpacity>            
+    </View>
+
       <Image style={styles.foto} source={require("../../images/user.jpg")} />
 
       <FlatList
         data={state}
         renderItem={({ item }) => (
           <View style={styles.container}>
-            <Text>Nome: {item.dados.nome} </Text>
-            <Text>Documento da moto: {item.dados.documentoMoto} </Text>
-            <Text>Placa: {item.dados.placaMoto} </Text>
-            <Text>Cor Moto: {item.dados.corMoto} </Text>
+            <View>
+            <Text style={styles.text}>Nome: {item.dados.nome} </Text>
+            <Text style={styles.text1}>Documento da moto: {item.dados.documentoMoto} </Text>
+            <Text style={styles.text1}>Placa: {item.dados.placaMoto} </Text>
+            <Text style={styles.text1}>Cor Moto: {item.dados.corMoto} </Text>
+            </View>
           </View>
         )}
       />
@@ -61,8 +72,9 @@ export default function Perfil() {
 }
 const styles = StyleSheet.create({
   foto: {
-    width: 200,
-    height: 200,
+    borderRadius:100,
+    width: 150,
+    height: 150,
     margin: "20%",
   },
   container: {
@@ -70,4 +82,35 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     flex: 1,
   },
+
+  text:{
+    fontSize:30,
+    fontWeight:'bold',
+    marginBottom:25,
+  },
+
+  text1:{
+    fontSize:25,
+    justifyContent: "flex-start",
+    marginBottom:18,
+  },
+
+  hojebtn1:{
+    justifyContent:'flex-start',
+    alignItems:'flex-start',
+    marginLeft:10,
+    width:'100%',
+  },
+
+  hojeTouch1:{
+    alignItems:'center',
+    backgroundColor:'#FFC107',
+    borderRadius:20,
+    justifyContent:'center',
+    height:30,
+    marginTop:20,
+    width:30,
+  },
+
+
 });
